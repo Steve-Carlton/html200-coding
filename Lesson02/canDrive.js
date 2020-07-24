@@ -15,6 +15,10 @@ let patronAge = 20;
 
 if (patronAge >= legalAge) {
   console.log(firstName + ' ' + lastName + ` can drive. They have been driving for ${patronAge - legalAge} year(s).`);
-} else for (let i = 5; i >= 0; i--) {
-  console.log(i);
+} else {for (let i = 5; i >= 0; i--) {
+  console.log(i);}
 }
+
+
+/* STAFF COMMENTS
+While the code still runs, it is best to wrap your code after an else statement in { } curly braces. Your code is: "else for() { //loop code }" but should be "else { for() { //loop code} }" */
