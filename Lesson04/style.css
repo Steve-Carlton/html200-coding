@@ -1,0 +1,13 @@
+* {
+  text-align: center;
+}
+
+button {
+  text-transform: uppercase;
+  padding: 3rem;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  border: 3px solid pink;
+  cursor: pointer;
+}
