@@ -1,17 +1,11 @@
-//Initial User Prompt
-function greetPrompt() {
-  prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
-
-}
-
-
-//User Input Flow Control
+//Main Menu Flow Control
 let userInput;
 
-function mainMenu(greetPrompt) {
-  switch (greetPrompt) {
+function mainMenu(userInput) {
+  prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
+  switch (userInput) {
       case 'Q': {
-        console.log('Goodbye.');
+        console.log('bananas.');
       }
       case 'W': {
         //return ~make a withdrawl
@@ -26,8 +20,7 @@ function mainMenu(greetPrompt) {
         break;
       }
     default: {
-      console.log('Invalid entry');
-      greetPrompt()
+      alert('Invalid entry');
     }
   }
 }
