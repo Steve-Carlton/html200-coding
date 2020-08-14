@@ -2,25 +2,16 @@
 let userInput;
 
 function mainMenu(userInput) {
-  prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
+prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
   switch (userInput) {
-      case 'Q': {
-        console.log('bananas.');
-      }
-      case 'W': {
-        //return ~make a withdrawl
-        break;
-      }
-      case 'D': {
-        //return ~make a deposit
-        break;
-      }
+      case 'Q':
+      case 'W':
+      case 'D':
       case 'B': {
-        //return ~display bank balance
-        break;
+      console.log('bananas.');
+      break;
       }
-    default: {
-      alert('Invalid entry');
-    }
+    //default: {
+      //console.log('Invalid entry');
   }
 }
