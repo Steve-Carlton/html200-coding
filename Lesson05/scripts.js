@@ -49,9 +49,10 @@ function mainMenu(userMainMenuInput) {
     case 'D':
     case 'd': {
       let userDepositAmount = prompt("Please enter deposit amount:");
-      function deposit(userDepositAmount) { //match to withdrawal
-        console.log(userDepositAmount);
+      function deposit(x) {
+        console.log(x);
       }
+      deposit(userDepositAmount);
       break;
       return;
     }
