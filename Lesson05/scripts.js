@@ -16,32 +16,46 @@ Extra challenges: The additional requirements below are optional. Implement them
 Publish your work to github.io
 */
 
-// do while?
+// wrap main menu in a do-while loop?
 
 //Main Menu Flow Control
-let userInput = prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
+let userMainMenuInput = prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
+//
+//
 
-function mainMenu(userInput) {
-  switch (userInput) {
+
+
+function mainMenu(userMainMenuInput) {
+  switch (userMainMenuInput) {
+    //Quit
     case 'Q':
     case 'q': {
       console.log('quit');
       alert('Goodbye.');
+      return;
+    }
+    //Withdrawal
+    case 'W':
+    case 'w': {
+      let userWithdrawalAmount = prompt("Please enter withdrawal amount:");
+      function withdrawal(x) {
+        console.log(x);
+      }
+      withdrawal(userWithdrawalAmount);
       break;
       return;
     }
-    case 'W':
-    case 'w': {
-      console.log('withdraw');
-      //withdraw interface. function?
-      break;
-    }
+    //Deposit
     case 'D':
     case 'd': {
-      console.log('deposit.');
-      //depsoit interface. function?
+      let userDepositAmount = prompt("Please enter deposit amount:");
+      function deposit(userDepositAmount) { //match to withdrawal
+        console.log(userDepositAmount);
+      }
       break;
+      return;
     }
+    //Balance
     case 'B':
     case 'b': {
       console.log('balance');
@@ -51,6 +65,8 @@ function mainMenu(userInput) {
     default: {
       console.log('invalid entry');
       alert('invalid entry');
+      break;
+      return;
     }
   }
 }
