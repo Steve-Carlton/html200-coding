@@ -23,7 +23,11 @@ let moneyIn;
 let moneyOut;
 let balance = moneyIn - moneyOut;
 
-let userMainMenuInput = prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
+
+
+for (i=0; i<=2; ++i)
+{
+  let userMainMenuInput = prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
 function mainMenu(userMainMenuInput) {
   switch (userMainMenuInput) {
     //Quit
@@ -69,3 +73,5 @@ function mainMenu(userMainMenuInput) {
     }
   }
  }
+  console.log(i);
+}
