@@ -19,12 +19,11 @@ Publish your work to github.io
 // wrap main menu in a do-while loop?
 
 //Main Menu Flow Control
+let moneyIn;
+let moneyOut;
+let balance = moneyIn - moneyOut;
+
 let userMainMenuInput = prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
-//
-//
-
-
-
 function mainMenu(userMainMenuInput) {
   switch (userMainMenuInput) {
     //Quit
@@ -38,19 +37,18 @@ function mainMenu(userMainMenuInput) {
     case 'W':
     case 'w': {
       let userWithdrawalAmount = prompt("Please enter withdrawal amount:");
-      function withdrawal(x) {
-        console.log(x);
+      function withdrawal(moneyOut) {
+        console.log(moneyOut);
       }
       withdrawal(userWithdrawalAmount);
       break;
-      return;
     }
     //Deposit
     case 'D':
     case 'd': {
       let userDepositAmount = prompt("Please enter deposit amount:");
-      function deposit(x) {
-        console.log(x);
+      function deposit(moneyIn) {
+        console.log(moneyIn);
       }
       deposit(userDepositAmount);
       break;
@@ -59,8 +57,8 @@ function mainMenu(userMainMenuInput) {
     //Balance
     case 'B':
     case 'b': {
-      console.log('balance');
-      //balance interface. function?
+      prompt("Current balance: $" + balance);
+      console.log(balance);
       break;
     }
     default: {
@@ -70,4 +68,4 @@ function mainMenu(userMainMenuInput) {
       return;
     }
   }
-}
+ }
