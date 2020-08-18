@@ -25,53 +25,83 @@ let balance = moneyIn - moneyOut;
 
 
 
-for (i=0; i<=2; ++i)
-{
-  let userMainMenuInput = prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
-function mainMenu(userMainMenuInput) {
-  switch (userMainMenuInput) {
-    //Quit
-    case 'Q':
-    case 'q': {
-      console.log('quit');
-      alert('Goodbye.');
-      return;
-    }
-    //Withdrawal
-    case 'W':
-    case 'w': {
-      let userWithdrawalAmount = prompt("Please enter withdrawal amount:");
-      function withdrawal(moneyOut) {
-        console.log(moneyOut);
-      }
-      withdrawal(userWithdrawalAmount);
-      break;
-    }
-    //Deposit
-    case 'D':
-    case 'd': {
-      let userDepositAmount = prompt("Please enter deposit amount:");
-      function deposit(moneyIn) {
-        console.log(moneyIn);
-      }
-      deposit(userDepositAmount);
-      break;
-      return;
-    }
-    //Balance
-    case 'B':
-    case 'b': {
-      prompt("Current balance: $" + balance);
-      console.log(balance);
-      break;
-    }
-    default: {
-      console.log('invalid entry');
-      alert('invalid entry');
-      break;
-      return;
-    }
+let userInput;
+function mainMenu(userInput) {
+  //nest loops below in a loop here.
+
+  if (userInput === 'q'){
+    console.log('quit');
+    return 'quit';
   }
- }
-  console.log(i);
+  else if (userInput === 'w') {
+    console.log('withdrawal');
+    return 'withdrawal';
+  }
+  else if (userInput === 'd') {
+    console.log('deposit');
+    return 'deposit';
+  }
+  else if (userInput === 'b') {
+    console.log('balance');
+    return 'balance';
+  }
+  else if (userInput === 'm') {
+    return 'menu';
+  } else {
+    console.log('invalid entry');
+    return 'menu';
+  }
 }
+console.log(mainMenu(userInput));
+
+// OBS switch statment. Not appropriate for this application...?
+// for (i=0; i<=2; ++i)
+// {
+//   let userMainMenuInput = prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
+// function mainMenu(userMainMenuInput) {
+//   switch (userMainMenuInput) {
+//     //Quit
+//     case 'Q':
+//     case 'q': {
+//       console.log('quit');
+//       alert('Goodbye.');
+//       return;
+//     }
+//     //Withdrawal
+//     case 'W':
+//     case 'w': {
+//       let userWithdrawalAmount = prompt("Please enter withdrawal amount:");
+//       function withdrawal(moneyOut) {
+//         console.log(moneyOut);
+//       }
+//       withdrawal(userWithdrawalAmount);
+//       break;
+//     }
+//     //Deposit
+//     case 'D':
+//     case 'd': {
+//       let userDepositAmount = prompt("Please enter deposit amount:");
+//       function deposit(moneyIn) {
+//         console.log(moneyIn);
+//       }
+//       deposit(userDepositAmount);
+//       break;
+//       return;
+//     }
+//     //Balance
+//     case 'B':
+//     case 'b': {
+//       prompt("Current balance: $" + balance);
+//       console.log(balance);
+//       break;
+//     }
+//     default: {
+//       console.log('invalid entry');
+//       alert('invalid entry');
+//       break;
+//       return;
+//     }
+//   }
+//  }
+//   console.log(i);
+// }
