@@ -19,8 +19,8 @@ Publish your work to github.io
 // wrap main menu in a do-while loop?
 
 //Main Menu Flow Control
-let moneyIn;
-let moneyOut;
+let moneyIn = 0;
+let moneyOut = 0;
 let balance = moneyIn - moneyOut;
 
 
@@ -34,28 +34,34 @@ function mainMenu(userAction) {
   }
   else if (userAction === 'w') {
     console.log('withdrawal');
-    prompt()
-    let userWithdrawalAmount;
-
-    let userAction = prompt('you are in the withdrawal function');
+    let moneyOut = prompt("Enter withdrawal amount: ");
+    console.log(moneyOut);
+    balance -= moneyOut;
+    console.log(balance);
+    let userAction ='m';
     console.log(userAction);
     mainMenu(userAction);
-    // return 'w';
   }
   else if (userAction === 'd') {
     console.log('deposit');
-    let userAction = prompt('you are in the deposit function');
+    let moneyIn = prompt('Enter deposit amount:');
+    console.log(moneyIn);
+    balance += moneyIn;
+    console.log(balance);
+    let userAction = 'm';
     console.log(userAction);
     mainMenu(userAction);
   }
   else if (userAction === 'b') {
     console.log('balance');
-    alert('Current balance: $');
+    console.log(balance);
+    alert('Current balance: $' + balance);
     userAction = 'm';
     mainMenu(userAction);
   }
   else if (userAction === 'm') {
     console.log('menu');
+    console.log(balance);
     let userAction = prompt('this is the main menu.'); // this function works for inputs. replicate this structure to other userAction else/if options
     console.log(userAction);
     mainMenu(userAction);
@@ -71,9 +77,9 @@ function mainMenu(userAction) {
 
 while (userAction != 'q') {
   mainMenu(userAction)
-  console.log('quitw1');
-  userAction = 'q';
-  console.log('quitw2');
+  console.log(balance);
+  userAction = 'q'; // this line quits the while loop
+  console.log('quitWhileLoop');
   }
 
 
