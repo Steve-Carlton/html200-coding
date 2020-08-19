@@ -36,6 +36,8 @@ function mainMenu(userAction) {
     console.log('withdrawal');
     let moneyOut = prompt("Enter withdrawal amount: ");
     console.log(moneyOut);
+    moneyOut = (parseInt(moneyOut));
+    console.log(moneyOut);
     balance -= moneyOut;
     console.log(balance);
     let userAction ='m';
@@ -46,8 +48,11 @@ function mainMenu(userAction) {
     console.log('deposit');
     let moneyIn = prompt('Enter deposit amount:');
     console.log(moneyIn);
+    moneyIn = (parseInt(moneyIn));
+    console.log(moneyIn);
     balance += moneyIn;
     console.log(balance);
+    console.log(typeof balance);
     let userAction = 'm';
     console.log(userAction);
     mainMenu(userAction);
@@ -62,7 +67,7 @@ function mainMenu(userAction) {
   else if (userAction === 'm') {
     console.log('menu');
     console.log(balance);
-    let userAction = prompt('this is the main menu.'); // this function works for inputs. replicate this structure to other userAction else/if options
+    let userAction = prompt('this is the main menu.');
     console.log(userAction);
     mainMenu(userAction);
 
@@ -78,6 +83,9 @@ function mainMenu(userAction) {
 while (userAction != 'q') {
   mainMenu(userAction)
   console.log(balance);
+  console.log(typeof balance);
+  console.log(typeof moneyIn);
+  console.log(typeof moneyOut);
   userAction = 'q'; // this line quits the while loop
   console.log('quitWhileLoop');
   }
