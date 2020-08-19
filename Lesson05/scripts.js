@@ -25,36 +25,63 @@ let balance = moneyIn - moneyOut;
 
 
 
-let userInput;
-function mainMenu(userInput) {
-  //nest loops below in a loop here.
+let userAction = 'm';
 
-  if (userInput === 'q'){
+function mainMenu(userAction) {
+  if (userAction === 'q'){
     console.log('quit');
-    return 'quit';
+    alert('Goodbye.');
   }
-  else if (userInput === 'w') {
+  else if (userAction === 'w') {
     console.log('withdrawal');
-    return 'withdrawal';
+    prompt()
+    let userWithdrawalAmount;
+
+    let userAction = prompt('you are in the withdrawal function');
+    console.log(userAction);
+    mainMenu(userAction);
+    // return 'w';
   }
-  else if (userInput === 'd') {
+  else if (userAction === 'd') {
     console.log('deposit');
-    return 'deposit';
+    let userAction = prompt('you are in the deposit function');
+    console.log(userAction);
+    mainMenu(userAction);
   }
-  else if (userInput === 'b') {
+  else if (userAction === 'b') {
     console.log('balance');
-    return 'balance';
+    alert('Current balance: $');
+    userAction = 'm';
+    mainMenu(userAction);
   }
-  else if (userInput === 'm') {
-    return 'menu';
+  else if (userAction === 'm') {
+    console.log('menu');
+    let userAction = prompt('this is the main menu.'); // this function works for inputs. replicate this structure to other userAction else/if options
+    console.log(userAction);
+    mainMenu(userAction);
+
   } else {
+    alert('invalid entry');
     console.log('invalid entry');
-    return 'menu';
+    let userAction = 'm';
+    console.log(userAction);
+    mainMenu(userAction);
   }
 }
-console.log(mainMenu(userInput));
 
-// OBS switch statment. Not appropriate for this application...?
+while (userAction != 'q') {
+  mainMenu(userAction)
+  console.log('quitw1');
+  userAction = 'q';
+  console.log('quitw2');
+  }
+
+
+
+
+
+
+// OBS switch statment. Could not get it to loop. Not appropriate for this application...?
 // for (i=0; i<=2; ++i)
 // {
 //   let userMainMenuInput = prompt('Welcome valued customer. Enter W to withdraw. D to deposit. B to view balance. Q to Quit.');
