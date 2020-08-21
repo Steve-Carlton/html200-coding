@@ -16,14 +16,14 @@ Extra challenges: The additional requirements below are optional. Implement them
 Publish your work to github.io
 */
 
-// wrap main menu in a do-while loop?
-
+/* myNotes: •
+•Get user input to ignore case. See equalsIgnoreCase?
+•
+*/
 //Main Menu Flow Control
 let moneyIn = 0;
 let moneyOut = 0;
 let balance = moneyIn - moneyOut;
-
-
 
 let userAction = 'm';
 
@@ -36,11 +36,11 @@ function mainMenu(userAction) {
     console.log('withdrawal');
     let moneyOut = prompt("Enter withdrawal amount: ");
     console.log(moneyOut);
-    moneyOut = (parseInt(moneyOut));
+    moneyOut = (parseInt(moneyOut)); // make string a number
     console.log(moneyOut);
-    balance -= moneyOut;
+    balance -= moneyOut; //this line updates balance.
     console.log(balance);
-    let userAction ='m';
+    let userAction = 'm';
     console.log(userAction);
     mainMenu(userAction);
   }
@@ -67,10 +67,15 @@ function mainMenu(userAction) {
   else if (userAction === 'm') {
     console.log('menu');
     console.log(balance);
-    let userAction = prompt('this is the main menu.');
-    console.log(userAction);
-    mainMenu(userAction);
-
+    if (balance === 0) {
+      let userAction = prompt('Welcome. Press \'w\' for withdrawals, \'d\' for deposits, \'b\' to display current account balance, or \'q\' to quit.  Your current balance is $' + balance + '. ');
+      console.log(userAction);
+      mainMenu(userAction);
+    } else {
+      let userAction = prompt('Welcome. Press \'w\' for withdrawals, \'d\' for deposits, \'b\' to display current account balance, or \'q\' to quit.');
+      console.log(userAction);
+      mainMenu(userAction);
+    }
   } else {
     alert('invalid entry');
     console.log('invalid entry');
