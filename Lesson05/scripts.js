@@ -1,4 +1,4 @@
-/*Create a bank application.
+/*Assignment Instructions Create a bank application.
 	•	The user should see a prompt so they can type which action to perform.
 	•	The user will have a list of 4 actions to choose from.
 	◦	Enter Q to quit (immediately quits the program).
@@ -9,9 +9,6 @@
 
 
 Extra challenges: The additional requirements below are optional. Implement them if you finish the Regular Challenge 1 (above) and are up for more!
-	•	The user should not be able to make excessive withdrawals (no negative balances).
-	•	The user should have a deposit cap of $50,000.
-	•	The user should receive a warning to protect against low balances.
 	•	Create an alert if the user tries to withdraw an amount that would leave them with less than $300 in their account, asking them to confirm if they're sure.
 Publish your work to github.io
 */
@@ -68,16 +65,21 @@ function mainMenu(userAction) {
       // console.log('0 balance. go to main menu');
     }
   }
-  else if (userAction === 'd') { //deposit menu
+  else if (userAction === 'd') { //deposit menu w/ deposit cap.
     // console.log('deposit');
     let moneyIn = prompt('Enter deposit amount:');
     moneyIn = (parseInt(moneyIn));
-    balance += moneyIn;
-    // console.log(balance);
-    // console.log(typeof balance);
-    let userAction = 'm';
-    // console.log(userAction);
-    mainMenu(userAction);
+    if (moneyIn > 50000) { // transaction not permitted. deposit cap alert.
+      alert('Transaction denied. Deposit cap is $50,000.');
+      let userAction = 'd';
+      // console.log('deposit denied')
+      mainMenu(userAction);
+    } else { // transaction processed return to main menu
+      balance += moneyIn;
+      let userAction = 'm';
+      // console.log('deposit accepted');
+      mainMenu(userAction);
+    }
   }
   else if (userAction === 'b') { // balance status menu
     // console.log('balance');
@@ -118,11 +120,7 @@ while (userAction != 'q') { // banking loop
   userAction = 'q'; // this line quits the while loop
   }
 
-
-
-
-
-
+/*OBS code
 // OBS switch statment. Could not get it to loop. Not appropriate for this application...?
 // for (i=0; i<=2; ++i)
 // {
@@ -174,3 +172,4 @@ while (userAction != 'q') { // banking loop
 //  }
 //   console.log(i);
 // }
+*/
