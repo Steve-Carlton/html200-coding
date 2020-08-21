@@ -16,10 +16,12 @@ Extra challenges: The additional requirements below are optional. Implement them
 Publish your work to github.io
 */
 
-/* myNotes: •
-•Get user input to ignore case. See equalsIgnoreCase?
-•
+/* myNotes:
+• How to get user input to ignore case. See equalsIgnoreCase?
+• Can a switch statment be incorporated to simplify the code?
+• How can I get this program to accept "Cancel" as a valid button click?
 */
+
 //Main Menu Flow Control
 let moneyIn = 0;
 let moneyOut = 0;
@@ -33,89 +35,87 @@ function mainMenu(userAction) {
     alert('Goodbye.');
   }
   else if (userAction === 'w') { //withdrawal menu /w $0 balance alert. negative balances not permitted.
-    console.log('withdrawal');
-    if (balance >= 0) { // no negative balances
-  moneyOut = prompt("Enter withdrawal amount: ");
-  moneyOut = (parseInt(moneyOut)); // make moneyOut a number.
-  console.log(moneyOut);
-  //where to perform the arithmetic? balance -= moneyOut; //this line updates balance.
-  if (balance - moneyOut < 0) {
-    alert('Transaction denied. Insufficient Funds. Current balance is: $ ' + balance);
-    let userAction = 'm'; // return to main menu.
-    mainMenu(userAction);
-    console.log('transaction denied. balance - moneyOut was less than 0. user sent to main menu');
-  }
-  else if (balance - moneyOut === 0) {
-    balance -= moneyOut;
-    alert('Warning. Current balance is: $ ' + balance);
-    let userAction = 'm'; // return to main menu.
-    mainMenu(userAction);
-    console.log('transaction processed. balance is $0. user sent to main menu');
-  }
-  else { //statement flows here...
-    balance -= moneyOut;
-    console.log('new balance: $' + balance);
-    let userAction = 'm'; // return to main menu.
-    mainMenu(userAction);
-    console.log('go to main menu');
+    // console.log('withdrawal');
+    if (balance >= 0) { // Get withdrawal amount
+    moneyOut = prompt("Enter withdrawal amount: ");
+    moneyOut = (parseInt(moneyOut)); // makes moneyOut a type number.
+    // console.log(moneyOut);
+      if (balance - moneyOut < 0) { // Transaction not processed, no negative balances.
+        alert('Transaction denied. Insufficient Funds. Current balance is: $ ' + balance);
+        let userAction = 'm'; // return to main menu.
+        mainMenu(userAction);
+        // console.log('transaction denied. balance - moneyOut was less than 0. user sent to main menu');
+      }
+      else if (balance - moneyOut === 0) { // $0 balance warning
+        balance -= moneyOut;
+        alert('Warning. Current balance is: $ ' + balance);
+        let userAction = 'm'; // return to main menu.
+        mainMenu(userAction);
+        // console.log('transaction processed. balance is $0. user sent to main menu');
+      }
+      else { // withdrawal will be processed
+        balance -= moneyOut;
+        // console.log('new balance: $' + balance);
+        let userAction = 'm'; // return to main menu.
+        mainMenu(userAction);
+        // console.log('go to main menu');
+    }
 }
-}
-else {
-  alert('0 balance. go to main menu');
-  let userAction = 'm'; // return to main menu.
-  mainMenu(userAction);
-  console.log('0 balance. go to main menu');
-}
+    else { // $0 balance. Patron cannot make a withdraw
+      alert('0 balance. go to main menu');
+      let userAction = 'm'; // return to main menu.
+      mainMenu(userAction);
+      // console.log('0 balance. go to main menu');
+    }
   }
   else if (userAction === 'd') { //deposit menu
-    console.log('deposit');
+    // console.log('deposit');
     let moneyIn = prompt('Enter deposit amount:');
-    console.log(moneyIn);
     moneyIn = (parseInt(moneyIn));
-    console.log(moneyIn);
     balance += moneyIn;
-    console.log(balance);
-    console.log(typeof balance);
+    // console.log(balance);
+    // console.log(typeof balance);
     let userAction = 'm';
-    console.log(userAction);
+    // console.log(userAction);
     mainMenu(userAction);
   }
   else if (userAction === 'b') { // balance status menu
-    console.log('balance');
-    console.log(balance);
+    // console.log('balance');
+    // console.log(balance);
     alert('Current balance: $' + balance);
     userAction = 'm';
     mainMenu(userAction);
   }
-  else if (userAction === 'm') { //main menu
-    console.log('menu');
-    console.log(balance);
-    if (balance === 0) {
-      let userAction = prompt('Welcome. Press \'w\' for withdrawals, \'d\' for deposits, \'b\' to display current account balance, or \'q\' to quit.  Your current balance is $' + balance + '. ');
-      console.log(userAction);
+  else if (userAction === 'm') { //main menu w/ $0 balance alternate greeting
+    // console.log('menu');
+    // console.log(balance);
+    if (balance === 0) { // $0 balance greeting. Withdrawals not permitted.
+      let userAction = prompt('Welcome. Enter \'w\' for withdrawals, \'d\' for deposits, \'b\' to display current account balance, or \'q\' to quit.  Your current balance is $' + balance + '. ');
+      // console.log(userAction);
+      if (userAction === 'w') {
+        alert('Current balance is $0. Choose another option.')
+        userAction = 'm'
+        mainMenu(userAction);
+      } else {
       mainMenu(userAction);
-    } else {
-      let userAction = prompt('Welcome. Press \'w\' for withdrawals, \'d\' for deposits, \'b\' to display current account balance, or \'q\' to quit.');
-      console.log(userAction);
+      }
+    } else { // generic greeting
+      let userAction = prompt('Welcome. Enter \'w\' for withdrawals, \'d\' for deposits, \'b\' to display current account balance, or \'q\' to quit.');
+      // console.log(userAction);
       mainMenu(userAction);
     }
-  } else {
-    alert('invalid entry');
+  } else { //invalid entry alert
+    alert('Invalid entry. Enter \'w\' for withdrawals, \'d\' for deposits, \'b\' to display current account balance, or \'q\' to quit.');
     console.log('invalid entry');
     let userAction = 'm';
-    console.log(userAction);
+    // console.log(userAction);
     mainMenu(userAction);
   }
 }
 
-while (userAction != 'q') {
+while (userAction != 'q') { // banking loop
   mainMenu(userAction)
-  console.log(balance);
-  console.log(typeof balance);
-  console.log(typeof moneyIn);
-  console.log(typeof moneyOut);
   userAction = 'q'; // this line quits the while loop
-  console.log('quitWhileLoop');
   }
 
 
