@@ -28,23 +28,46 @@ let balance = moneyIn - moneyOut;
 let userAction = 'm';
 
 function mainMenu(userAction) {
-  if (userAction === 'q'){
+  if (userAction === 'q'){ //quit message
     console.log('quit');
     alert('Goodbye.');
   }
-  else if (userAction === 'w') {
+  else if (userAction === 'w') { //withdrawal menu /w $0 balance alert. negative balances not permitted.
     console.log('withdrawal');
-    let moneyOut = prompt("Enter withdrawal amount: ");
-    console.log(moneyOut);
-    moneyOut = (parseInt(moneyOut)); // make string a number
-    console.log(moneyOut);
-    balance -= moneyOut; //this line updates balance.
-    console.log(balance);
-    let userAction = 'm';
-    console.log(userAction);
+    if (balance >= 0) { // no negative balances
+  moneyOut = prompt("Enter withdrawal amount: ");
+  moneyOut = (parseInt(moneyOut)); // make moneyOut a number.
+  console.log(moneyOut);
+  //where to perform the arithmetic? balance -= moneyOut; //this line updates balance.
+  if (balance - moneyOut < 0) {
+    alert('Transaction denied. Insufficient Funds. Current balance is: $ ' + balance);
+    let userAction = 'm'; // return to main menu.
     mainMenu(userAction);
+    console.log('transaction denied. balance - moneyOut was less than 0. user sent to main menu');
   }
-  else if (userAction === 'd') {
+  else if (balance - moneyOut === 0) {
+    balance -= moneyOut;
+    alert('Warning. Current balance is: $ ' + balance);
+    let userAction = 'm'; // return to main menu.
+    mainMenu(userAction);
+    console.log('transaction processed. balance is $0. user sent to main menu');
+  }
+  else { //statement flows here...
+    balance -= moneyOut;
+    console.log('new balance: $' + balance);
+    let userAction = 'm'; // return to main menu.
+    mainMenu(userAction);
+    console.log('go to main menu');
+}
+}
+else {
+  alert('0 balance. go to main menu');
+  let userAction = 'm'; // return to main menu.
+  mainMenu(userAction);
+  console.log('0 balance. go to main menu');
+}
+  }
+  else if (userAction === 'd') { //deposit menu
     console.log('deposit');
     let moneyIn = prompt('Enter deposit amount:');
     console.log(moneyIn);
@@ -57,14 +80,14 @@ function mainMenu(userAction) {
     console.log(userAction);
     mainMenu(userAction);
   }
-  else if (userAction === 'b') {
+  else if (userAction === 'b') { // balance status menu
     console.log('balance');
     console.log(balance);
     alert('Current balance: $' + balance);
     userAction = 'm';
     mainMenu(userAction);
   }
-  else if (userAction === 'm') {
+  else if (userAction === 'm') { //main menu
     console.log('menu');
     console.log(balance);
     if (balance === 0) {
