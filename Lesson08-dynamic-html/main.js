@@ -5,11 +5,9 @@ blogPageHeadline.textContent = 'All about our dog blog'; //add text to blogPageH
 blogPageHeadline.setAttribute('class', 'blog-headline') //add a style by class name
 document.body.appendChild(blogPageHeadline); //put blogPageHeadline into the body
 
-
-
 // create section w/ class 'intro'
 let intro = document.createElement('section');
-intro.textContent = 'section test'; //test line
+// intro.textContent = 'section test'; //test line
 intro.setAttribute('class', 'intro')
 intro.setAttribute('id', 'blog-page')
 document.body.appendChild(intro);
@@ -124,22 +122,37 @@ blogCopyContainer3.appendChild(entryCopy3); //append blog post paragraphy copy t
 
 // My blog a object per blog title and entry
 const blogObject1 = {
+  post: post1,
+  image: img01,
+  copyContainer: blogCopyContainer1,
   title: entryTitle1,
   copy: entryCopy1,
-  'entry counter': 0
+  'entry number': 0
 };
 
 const blogObject2 = {
   title: entryTitle2,
   copy: entryCopy2,
-  'entry counter': 1
+  'entry number': 1
 };
 
 const blogObject3 = {
   title: entryTitle3,
   copy: entryCopy3,
-  'entry counter': 2
+  'entry number': 2
 };
 
 // My array of blog objects
 const objArray = [blogObject1, blogObject2, blogObject3];
+
+// Loop (i counter for blog entries)
+// loop needs to append each entry to an article (post container), and then to the section (blog container)
+// i++ blogObject + number
+
+/*blog post anatomy
+create an post container article, append it to intro section
+create image, append it to article
+create blogCopyContainer div, append it to article
+create blog post title h4, append it to blogCopyContainer
+create paragraph, append it to blogCopyContainer
+*/

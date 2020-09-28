@@ -15,6 +15,15 @@ h3 {
   float: left;
 }
 
+article {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
 article div {
   display: inline-block;
   width: 55%;
@@ -30,6 +39,7 @@ article div {
   margin-left: auto;
   margin-right: auto;
   float: none;
+  padding: 10px;
 }
 
 .post p {
