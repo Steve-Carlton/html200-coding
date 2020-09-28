@@ -40,3 +40,17 @@ document.body.appendChild(entryTitle);
 let entryCopy = document.createElement('p');
 entryCopy.textContent = 'Iduciendisite quo magnatem iuntum quid quaest ea am, tenderumet adis dolenem quidustrum fuga. Faceaquae estioria derum recuptatur, cum volore, undipsa doloreium hillupta aut es ut alitatuscit ommossum haritatur arum qui of cae videbiti corporeium faccull oribus es quidignis ipietus explam sus am aut amet ant fugiatum, utem non reptat.';
 document.body.appendChild(entryCopy);
+
+blogCopyContainer.appendChild(entryTitle); //append blog post title to blog container
+blogCopyContainer.appendChild(entryCopy); //append blog post paragraphy copy to blog container
+
+// My blog object (blog title and entry)
+// Make an object for each blog post <------------
+const blogObject = {
+  title: entryTitle,
+  copy: entryCopy,
+  'entry counter': 0
+};
+
+// My array of blog objects
+const objArray = [blogObject, 'test', 2];
