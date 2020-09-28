@@ -5,6 +5,8 @@ blogPageHeadline.textContent = 'All about our dog blog'; //add text to blogPageH
 blogPageHeadline.setAttribute('class', 'blog-headline') //add a style by class name
 document.body.appendChild(blogPageHeadline); //put blogPageHeadline into the body
 
+
+
 // create section w/ class 'intro'
 let intro = document.createElement('section');
 intro.textContent = 'section test'; //test line
@@ -12,11 +14,14 @@ intro.setAttribute('class', 'intro')
 intro.setAttribute('id', 'blog-page')
 document.body.appendChild(intro);
 
+//ENTRY 1
+
 //create article w/ class 'post' nested inside section 'intro'
-let post = document.createElement('article');
-post.textContent = 'article test'; //test line
-post.setAttribute('class', 'post')
-document.body.appendChild(post); //how to nest all this inside section?
+let post1 = document.createElement('article');
+// post.textContent = 'article test'; //test line
+post1.setAttribute('class', 'post')
+document.body.appendChild(post1); //how to nest all this inside section?
+intro.appendChild(post1);
 
 //create image w/ src images/blog-1.jpg
 let img01 = document.createElement('img');
@@ -25,32 +30,116 @@ img01.setAttribute('alt', 'woman sitting with her arm around her black shepard e
 img01.setAttribute('width', 275)
 img01.setAttribute('height', 260)
 document.body.appendChild(img01);
+post1.appendChild(img01);
 
-//create div
-let blogCopyContainer = document.createElement('div');
-blogCopyContainer.textContent = 'blogCopyContainer test'; //test line
-document.body.appendChild(blogCopyContainer);
+//create div (blog text container)
+let blogCopyContainer1 = document.createElement('div');
+//blogCopyContainer1.textContent = 'blogCopyContainer test'; //test line
+document.body.appendChild(blogCopyContainer1);
+post1.appendChild(blogCopyContainer1);
 
 //create blog entry title
-let entryTitle = document.createElement('h4');
-entryTitle.textContent = 'Traveling With Your Dog';
-document.body.appendChild(entryTitle);
+let entryTitle1 = document.createElement('h4');
+entryTitle1.textContent = 'Traveling With Your Dog';
+document.body.appendChild(entryTitle1);
+blogCopyContainer1.appendChild(entryTitle1); //append blog post title to blog container
 
 //create blog entry copy
-let entryCopy = document.createElement('p');
-entryCopy.textContent = 'Iduciendisite quo magnatem iuntum quid quaest ea am, tenderumet adis dolenem quidustrum fuga. Faceaquae estioria derum recuptatur, cum volore, undipsa doloreium hillupta aut es ut alitatuscit ommossum haritatur arum qui of cae videbiti corporeium faccull oribus es quidignis ipietus explam sus am aut amet ant fugiatum, utem non reptat.';
-document.body.appendChild(entryCopy);
+let entryCopy1 = document.createElement('p');
+entryCopy1.textContent = 'Iduciendisite quo magnatem iuntum quid quaest ea am, tenderumet adis dolenem quidustrum fuga. Faceaquae estioria derum recuptatur, cum volore, undipsa doloreium hillupta aut es ut alitatuscit ommossum haritatur arum qui of cae videbiti corporeium faccull oribus es quidignis ipietus explam sus am aut amet ant fugiatum, utem non reptat. Uptiusd andesci qui nem aut vendion ectur? Debis que explaut laborenia que doluptur, con et labor abor sant poreperum dio quat que doluptatur aut voluptassim quisciatquam ea ad qui con nes cus esere dolut hicto teni solutenis alit ulparume nonseca estorer spernam voluptassim quisciatquam ea ad qui con nes cus esere dolut hicto teni solutenis alit ulparume nonseca estorer spernam.';
+document.body.appendChild(entryCopy1);
+blogCopyContainer1.appendChild(entryCopy1); //append blog post paragraphy copy to blog container
 
-blogCopyContainer.appendChild(entryTitle); //append blog post title to blog container
-blogCopyContainer.appendChild(entryCopy); //append blog post paragraphy copy to blog container
+//ENTRY 2
 
-// My blog object (blog title and entry)
-// Make an object for each blog post <------------
-const blogObject = {
-  title: entryTitle,
-  copy: entryCopy,
+//create article w/ class 'post' nested inside section 'intro'
+let post2 = document.createElement('article');
+// post.textContent = 'article test'; //test line
+post2.setAttribute('class', 'post')
+document.body.appendChild(post2); //how to nest all this inside section?
+intro.appendChild(post2);
+
+//create image w/ src images/blog-2.jpg
+let img02 = document.createElement('img');
+img02.setAttribute('src', 'images/blog-2.jpg')
+img02.setAttribute('alt', 'four well-behaved dogs sit watching their dog walker enjoying the grand canyon')
+img02.setAttribute('width', 275)
+img02.setAttribute('height', 260)
+document.body.appendChild(img02);
+post2.appendChild(img02);
+
+//create div (blog text container)
+let blogCopyContainer2 = document.createElement('div');
+//blogCopyContainer2.textContent = 'blogCopyContainer test'; //test line
+document.body.appendChild(blogCopyContainer2);
+post2.appendChild(blogCopyContainer2);
+
+//create blog entry title
+let entryTitle2 = document.createElement('h4');
+entryTitle2.textContent = 'How To Walk Multiple Dogs';
+document.body.appendChild(entryTitle2);
+blogCopyContainer2.appendChild(entryTitle2); //append blog post title to blog container
+
+//create blog entry copy
+let entryCopy2 = document.createElement('p');
+entryCopy2.textContent = 'Iduciendisite quo magnatem iuntum quid quaest ea am, tenderumet adis dolenem quidustrum fuga. Faceaquae estioria derum recuptatur, cum volore, undipsa doloreium hillupta aut es ut alitatuscit ommossum haritatur arum qui of cae videbiti corporeium faccull oribus es quidignis ipietus explam sus am aut amet ant fugiatum, utem non reptat. Uptiusd andesci qui nem aut vendion ectur? Debis que explaut laborenia que doluptur, con et labor abor sant poreperum dio quat que doluptatur aut voluptassim quisciatquam ea ad qui con nes cus esere dolut hicto teni solutenis alit ulparume nonseca estorer spernam voluptassim quisciatquam ea ad qui con nes cus esere dolut hicto teni solutenis alit ulparume nonseca estorer spernam.';
+document.body.appendChild(entryCopy2);
+blogCopyContainer2.appendChild(entryCopy2); //append blog post paragraphy copy to blog container
+
+//ENTRY 3
+
+//create article w/ class 'post' nested inside section 'intro'
+let post3 = document.createElement('article');
+// post.textContent = 'article test'; //test line
+post3.setAttribute('class', 'post')
+document.body.appendChild(post3); //how to nest all this inside section?
+intro.appendChild(post3);
+
+//create image w/ src images/blog-3.jpg
+let img03 = document.createElement('img');
+img03.setAttribute('src', 'images/blog-3.jpg')
+img03.setAttribute('alt', 'a dog and its owner play fetch at sunset')
+img03.setAttribute('width', 275)
+img03.setAttribute('height', 260)
+document.body.appendChild(img03);
+post3.appendChild(img03);
+
+//create div (blog text container)
+let blogCopyContainer3 = document.createElement('div');
+//blogCopyContainer3.textContent = 'blogCopyContainer test'; //test line
+document.body.appendChild(blogCopyContainer3);
+post3.appendChild(blogCopyContainer3);
+
+//create blog entry title
+let entryTitle3 = document.createElement('h4');
+entryTitle3.textContent = 'Teach Your Dog To Fetch!';
+document.body.appendChild(entryTitle3);
+blogCopyContainer3.appendChild(entryTitle3); //append blog post title to blog container
+
+//create blog entry copy
+let entryCopy3 = document.createElement('p');
+entryCopy3.textContent = 'Iduciendisite quo magnatem iuntum quid quaest ea am, tenderumet adis dolenem quidustrum fuga. Faceaquae estioria derum recuptatur, cum volore, undipsa doloreium hillupta aut es ut alitatuscit ommossum haritatur arum qui of cae videbiti corporeium faccull oribus es quidignis ipietus explam sus am aut amet ant fugiatum, utem non reptat. Uptiusd andesci qui nem aut vendion ectur? Debis que explaut laborenia que doluptur, con et labor abor sant poreperum dio quat que doluptatur aut voluptassim quisciatquam ea ad qui con nes cus esere dolut hicto teni solutenis alit ulparume nonseca estorer spernam voluptassim quisciatquam ea ad qui con nes cus esere dolut hicto teni solutenis alit ulparume nonseca estorer spernam.';
+document.body.appendChild(entryCopy3);
+blogCopyContainer3.appendChild(entryCopy3); //append blog post paragraphy copy to blog container
+
+// My blog a object per blog title and entry
+const blogObject1 = {
+  title: entryTitle1,
+  copy: entryCopy1,
   'entry counter': 0
 };
 
+const blogObject2 = {
+  title: entryTitle2,
+  copy: entryCopy2,
+  'entry counter': 1
+};
+
+const blogObject3 = {
+  title: entryTitle3,
+  copy: entryCopy3,
+  'entry counter': 2
+};
+
 // My array of blog objects
-const objArray = [blogObject, 'test', 2];
+const objArray = [blogObject1, blogObject2, blogObject3];
