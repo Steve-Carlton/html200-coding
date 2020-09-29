@@ -120,7 +120,7 @@ entryCopy3.textContent = 'Iduciendisite quo magnatem iuntum quid quaest ea am, t
 document.body.appendChild(entryCopy3);
 blogCopyContainer3.appendChild(entryCopy3); //append blog post paragraphy copy to blog container
 
-// My blog a object per blog title and entry
+// My blog object per blog title and entry
 const blogObject1 = {
   post: post1,
   image: img01,
@@ -148,8 +148,11 @@ const objArray = [blogObject1, blogObject2, blogObject3];
 // Loop (i counter for blog entries)
 // loop needs to append each entry to an article (post container), and then to the section (blog container)
 // i++ blogObject + number
+for (i = 0; i < 3; i++) {
+  objArray[i];
+};
 
-/*blog post anatomy
+/*anatomy of a blog post 
 create an post container article, append it to intro section
 create image, append it to article
 create blogCopyContainer div, append it to article
